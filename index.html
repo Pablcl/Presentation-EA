@@ -33,7 +33,7 @@
 
     html,
     body {
-      height: 100%
+      min-height: 100%
     }
 
     body {
@@ -44,6 +44,7 @@
         radial-gradient(900px 700px at 85% 10%, rgba(34, 211, 238, .22), transparent 55%),
         radial-gradient(1000px 800px at 50% 120%, rgba(124, 58, 237, .16), transparent 60%),
         linear-gradient(180deg, var(--bg0), var(--bg1) 65%, var(--bg0));
+      background-attachment: fixed;
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display",
         "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji",
         "Segoe UI Emoji";
@@ -538,6 +539,27 @@
     .closeBtn:hover {
       background: rgba(255, 255, 255, .06)
     }
+
+    /* Technology Section */
+    .techGrid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .techStats {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    @media (max-width: 800px) {
+      .techGrid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
   </style>
 </head>
 
@@ -552,6 +574,7 @@
         <div class="navlinks" role="navigation" aria-label="Secciones">
           <a href="#equipo">Equipo</a>
           <a href="#historia">Historia de usuario</a>
+          <a href="#tecnologia">Tecnología</a>
           <a href="#mockups">Mockups</a>
         </div>
       </div>
@@ -701,6 +724,38 @@
           Nota: en la versión del proyecto, la ubicación se muestra por <strong>zona</strong> (no punto exacto), y los
           datos sensibles solo se desbloquean por fases.
         </blockquote>
+      </div>
+    </section>
+
+    <!-- TECNOLOGÍA -->
+    <section id="tecnologia">
+      <div class="sectionTitle">
+        <h2>Elección tecnológica</h2>
+        <p>Por qué hemos elegido Angular para el frontend.</p>
+      </div>
+
+      <div class="card pad">
+        <div class="techGrid">
+          <div class="story">
+            <p>
+              Hemos elegido <strong>Angular</strong> para el frontend porque creemos que es más conveniente para proyectos a largo plazo, con futuro.
+              Angular trae una estructura más completa que React (rutas, formularios, SSR y herramientas de desarrollo), y eso nos ayuda a trabajar con más orden. Es mejor y más mantenible en el tiempo.
+            </p>
+            <p style="margin-top: 18px;">
+              Para nosotros esto es importante porque no queremos hacer solo un MVP rápido. Queremos presentar la idea a concursos y seguir mejorando la plataforma como <strong>SaaS</strong>. Por eso nos conviene utilizar una tecnología que facilite crecer sin perder organización.
+            </p>
+          </div>
+          <div class="techStats">
+            <div class="stat" style="border-color: rgba(124, 58, 237, .3);">
+              <strong style="color: var(--brand2); font-size: 16px; margin-bottom: 4px;">Estructura completa</strong>
+              <small>Incluye nativamente routing, gestión de formularios, animaciones y herramientas de CLI.</small>
+            </div>
+            <div class="stat" style="border-color: rgba(34, 211, 238, .3);">
+              <strong style="color: var(--brand2); font-size: 16px; margin-bottom: 4px;">Escalabilidad SaaS</strong>
+              <small>Arquitectura basada en componentes y servicios que facilita el crecimiento modular del producto.</small>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
