@@ -441,25 +441,44 @@
     }
 
     .mock {
-      border-radius: 18px;
+      border-radius: 20px;
       border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(0, 0, 0, .18);
+      background: rgba(255, 255, 255, .03);
       overflow: hidden;
       cursor: zoom-in;
       position: relative;
-      transition: .18s ease;
+      transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+      max-width: 240px;
+      margin: 0 auto;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .mock:hover {
-      transform: translateY(-2px);
-      background: rgba(0, 0, 0, .22)
+      transform: translateY(-6px) scale(1.02);
+      border-color: rgba(255, 255, 255, .20);
+      background: rgba(255, 255, 255, .06);
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.7), 0 0 20px rgba(124, 58, 237, 0.15);
+    }
+
+    .mock:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+      pointer-events: none;
     }
 
     .mock img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block
+      height: auto;
+      max-height: 420px;
+      object-fit: contain;
+      display: block;
+      border-radius: 8px;
     }
 
     .mockLabel {
@@ -579,6 +598,7 @@
           <a href="#API">Diseño de la API</a>
           <a href="#MEAN">Stack MEAN</a>
           <a href="#angular">Angular</a>
+          <a href="#flutter">Flutter</a>
           <a href="#conciencia">Conciencia digital</a>
         </div>  
         </div>
@@ -742,24 +762,24 @@
       <div class="card pad">
         <div class="mockGrid">
           <!-- Reemplaza con tus PNG en assets/mockups/ -->
-          <div class="mock" data-full="assets/mockups/app-home.png" aria-label="Mockup App Home">
-            <div class="mockLabel">App · Inicio</div>
-            <img src="assets/mockups/app-home.png" alt="Mockup de la pantalla de inicio" />
+          <div class="mock" data-full="assets/mockups/app-home-real.png" aria-label="Mockup App Home">
+            <div class="mockLabel">App · Inicio (Real)</div>
+            <img src="assets/mockups/app-home-real.png" alt="Mockup de la pantalla de inicio real" />
           </div>
 
-          <div class="mock" data-full="assets/mockups/app-profile.png" aria-label="Mockup App Perfil">
-            <div class="mockLabel">App · Perfil</div>
-            <img src="assets/mockups/app-profile.png" alt="Mockup de la pantalla del perfil del usuario" />
+          <div class="mock" data-full="assets/mockups/app-page-dark-real.png" aria-label="Mockup App Perfil">
+            <div class="mockLabel">App · Perfil (Fosc)</div>
+            <img src="assets/mockups/app-page-dark-real.png" alt="Mockup de la pantalla del perfil del usuario en fosc" />
           </div>
 
-          <div class="mock" data-full="assets/mockups/app-chat.png" aria-label="Mockup App Chat">
-            <div class="mockLabel">App · Chat</div>
-            <img src="assets/mockups/app-chat.png" alt="Mockup de chat" />
+          <div class="mock" data-full="assets/mockups/app-page-light-real.png" aria-label="Mockup App Perfil Light">
+            <div class="mockLabel">App · Perfil (Clar)</div>
+            <img src="assets/mockups/app-page-light-real.png" alt="Mockup de la pantalla del perfil del usuario en clar" />
           </div>
 
-          <div class="mock" data-full="assets/mockups/web-dashboard.png" aria-label="Mockup Web Dashboard">
-            <div class="mockLabel">Web · Panel</div>
-            <img src="assets/mockups/web-dashboard.png" alt="Mockup del panel web" />
+          <div class="mock" data-full="assets/mockups/web-home-real.png" aria-label="Mockup Web Home">
+            <div class="mockLabel">Web · Inicio (Split)</div>
+            <img src="assets/mockups/web-home-real.png" alt="Mockup de la web en MacBook Pro con modo clar i fosc" />
           </div>
         </div>
       </div>
@@ -1023,6 +1043,65 @@ classDiagram
         </div>
       </div>
     </section>
+    
+    <!-- Flutter -->
+    <section id="flutter" style="margin-top: 34px;">
+      <div class="card pad">
+        
+        <h3 style="margin: 0 0 16px; font-size: 24px; color: var(--text); letter-spacing: -0.5px;">
+          Desarrollo Mobile: ¿Por qué Flutter es nuestra elección para la App?
+        </h3>
+        
+        <div class="story">
+          <p>
+            Para llevar Relevo al bolsillo de nuestros usuarios, necesitábamos una tecnología que no sacrificara el rendimiento por la velocidad de desarrollo. Tras evaluar varias opciones, <strong>Flutter</strong> se convirtió en el candidato indiscutible.
+          </p>
+    
+          <div class="pill" style="margin-top: 20px; margin-bottom: 24px;">
+            <span style="border-color: rgba(34, 211, 238, 0.5); color: #22D3EE; background: rgba(34, 211, 238, 0.08);">Flutter 3.24+</span>
+            <span>Dart</span>
+            <span>Riverpod</span>
+            <span>Go_Router</span>
+            <span>Clean Architecture</span>
+          </div>
+          
+          <div class="stats" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 26px;">
+            
+            <div class="stat">
+              <div class="tagOk">
+                <span class="check" style="border-color: #027DFD; background: rgba(2,125,253,0.18);"></span> 
+                Multiplataforma Real
+              </div>
+              <strong style="margin-top: 10px;">Un solo código, dos sistemas</strong>
+              <small>Compilamos nativamente para iOS y Android compartiendo el 100% de la lógica de negocio, lo que nos permite iterar el doble de rápido sin perder rendimiento.</small>
+            </div>
+    
+            <div class="stat">
+              <div class="tagOk">
+                <span class="check" style="border-color: #027DFD; background: rgba(2,125,253,0.18);"></span> 
+                Estado Reactivo
+              </div>
+              <strong style="margin-top: 10px;">Riverpod & Sincronización</strong>
+              <small>Gestionamos el flujo de datos de forma unidireccional y segura. Las notificaciones de nuevas ofertas y mensajes del chat se reflejan al instante en la UI.</small>
+            </div>
+    
+            <div class="stat">
+              <div class="tagOk">
+                <span class="check" style="border-color: #027DFD; background: rgba(2,125,253,0.18);"></span> 
+                UI Consistente
+              </div>
+              <strong style="margin-top: 10px;">Motor Gráfico Propio</strong>
+              <small>Gracias al motor Skia/Impeller, garantizamos que el diseño premium de Relevo se vea idéntico y fluido (60-120fps) en cualquier gama de teléfono móvil.</small>
+            </div>
+    
+          </div>
+    
+          <blockquote style="margin-top: 0; border-left-color: #027DFD;">
+            <strong style="color: var(--text);">Flutter nos permite ofrecer una experiencia de usuario fluida y "pixel-perfect", esencial para transmitir la confianza y seriedad que requiere una plataforma de traspaso de negocios.
+          </blockquote>
+        </div>
+      </div>
+    </section>
 
     <!-- Conciencia Digital -->
     <section id="conciencia" style="margin-top: 34px;">
@@ -1048,7 +1127,16 @@ classDiagram
                 Inclusión (UX)
               </div>
               <strong style="margin-top: 10px;">Cero Brecha Digital</strong>
-              <small>Interfaces limpias, tipografías legibles y procesos guiados paso a paso para que usuarios senior (como Joan) puedan publicar su negocio sin frustración ni ayuda externa.</small>
+              <small>Interfaces limpias y procesos guiados para que usuarios senior puedan publicar su negocio sin frustración ni ayuda externa.</small>
+            </div>
+
+            <div class="stat">
+              <div class="tagOk" style="color: #34D399;">
+                <span class="check" style="border-color: #10B981; background: rgba(16, 185, 129, 0.18);"></span> 
+                Accesibilidad Universal
+              </div>
+              <strong style="margin-top: 10px;">Multi-idioma y Adaptabilidad</strong>
+              <small>Sistema i18n (Català, Castellano, English) y selector de Modo Fosc/Clar. La plataforma se adapta a la lengua y salud visual del usuario, no al revés.</small>
             </div>
 
             <div class="stat">
@@ -1057,7 +1145,7 @@ classDiagram
                 Ética de Datos
               </div>
               <strong style="margin-top: 10px;">Soberanía y Transparencia</strong>
-              <small>No usamos "dark patterns". El usuario sabe exactamente qué datos se comparten y cuándo. Incluimos <em>nudges</em> (avisos) educativos sobre cómo censurar datos sensibles en documentos.</small>
+              <small>No usamos "dark patterns". El usuario sabe qué datos comparte. Incluimos avisos educativos sobre cómo censurar datos sensibles.</small>
             </div>
 
             <div class="stat">
@@ -1066,11 +1154,114 @@ classDiagram
                 Sostenibilidad
               </div>
               <strong style="margin-top: 10px;">Green Web & Paperless</strong>
-              <small>Fomentamos el uso de NDAs digitales y Virtual Data Rooms para eliminar el papeleo físico. A nivel técnico, usamos modo oscuro y carga perezosa para reducir el consumo energético.</small>
+              <small>Fomentamos el uso de NDAs digitales para eliminar el papel. A nivel técnico, optimizamos la carga para reducir el consumo energético.</small>
             </div>
 
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Roadmap / Sprints -->
+    <section id="sprints" style="margin-top: 50px; margin-bottom: 60px;">
+      <div class="sectionTitle">
+        <h2>Histórico de Sprints</h2>
+        <p>Evolución técnica y funcionalidades implementadas.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+        
+        <!-- Sprint 0 -->
+        <div class="card pad" style="border-left: 4px solid rgba(255, 255, 255, 0.2);">
+          <div class="kicker" style="margin-bottom: 12px; font-size: 11px;">SPRINT 0 — INICIO</div>
+          <h4 style="margin: 0 0 16px; font-size: 18px;">Bases del servidor</h4>
+          
+          <div style="font-size: 13px; color: var(--muted); line-height: 1.6;">
+            <p style="margin-bottom: 8px;"><strong>Backend:</strong></p>
+            <ul style="padding-left: 18px;">
+              <li>Configuración inicial Node.js + Express.</li>
+              <li>Conexión base con MongoDB Atlas.</li>
+              <li>Estructura de carpetas y middleware base.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sprint 1 -->
+        <div class="card pad" style="border-left: 4px solid var(--muted2);">
+          <div class="kicker" style="margin-bottom: 12px; font-size: 11px;">SPRINT 1</div>
+          <h4 style="margin: 0 0 16px; font-size: 18px;">Fundamentos y Estructura</h4>
+          
+          <div style="font-size: 13px; color: var(--muted); line-height: 1.6;">
+            <p style="margin-bottom: 8px;"><strong>Backend:</strong></p>
+            <ul style="padding-left: 18px; margin-bottom: 16px;">
+              <li>Modelos (3) y Endpoints base.</li>
+              <li>Documentación Swagger doc.</li>
+              <li>Validaciones de esquema (Zod).</li>
+            </ul>
+
+            <p style="margin-bottom: 8px;"><strong>Frontend Web:</strong></p>
+            <ul style="padding-left: 18px;">
+              <li>Modelos (3) sincronizados.</li>
+              <li>Back Office UI V1.</li>
+              <li>Funcionalidad Soft Delete.</li>
+              <li>Selección múltiple (Multi Select).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sprint 2 -->
+        <div class="card pad" style="border-left: 4px solid var(--brand);">
+          <div class="kicker" style="margin-bottom: 12px; font-size: 11px;">SPRINT 2</div>
+          <h4 style="margin: 0 0 16px; font-size: 18px;">Autenticación y Perfilado</h4>
+          
+          <div style="font-size: 13px; color: var(--muted); line-height: 1.6;">
+            <p style="margin-bottom: 8px;"><strong>Backend:</strong></p>
+            <ul style="padding-left: 18px; margin-bottom: 16px;">
+              <li>Implementación de JWT.</li>
+              <li>Endpoints de Login y Register.</li>
+              <li>Hash de passwords (seguridad).</li>
+              <li>Error handling estandarizado.</li>
+            </ul>
+
+            <p style="margin-bottom: 8px;"><strong>Frontend Web:</strong></p>
+            <ul style="padding-left: 18px;">
+              <li>Back Office V2 (Mejorado).</li>
+              <li>Módulos de Login y Register.</li>
+              <li>Gestión de Perfil de usuario.</li>
+              <li>Integración total de JWT.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sprint 3 -->
+        <div class="card pad" style="border-left: 4px solid var(--ok); background: rgba(52, 211, 153, 0.03);">
+          <div class="kicker" style="margin-bottom: 12px; font-size: 11px; border-color: var(--ok); color: var(--ok);">SPRINT 3</div>
+          <h4 style="margin: 0 0 16px; font-size: 18px;">E2E y Omnicanalidad</h4>
+          
+          <div style="font-size: 13px; color: var(--muted); line-height: 1.6;">
+            <p style="margin-bottom: 6px;"><strong>Backend:</strong></p>
+            <ul style="padding-left: 18px; margin-bottom: 12px;">
+              <li>Sockets (1 a 1) y Accesibilidad.</li>
+              <li>Flujo E2E completo (Flujo de la idea).</li>
+              <li>Testing (Vitest), Husky, Linting.</li>
+              <li>Despliegue Prod & Docker Hub.</li>
+            </ul>
+
+            <p style="margin-bottom: 6px;"><strong>Frontend Web:</strong></p>
+            <ul style="padding-left: 18px; margin-bottom: 12px;">
+              <li>Back Office V3 y Chat WebSockets.</li>
+              <li>Accesibilidad (Idioma, Modo O/C).</li>
+              <li>Flujo E2E y Despliegue Docker.</li>
+            </ul>
+
+            <p style="margin-bottom: 6px;"><strong>Frontend App:</strong></p>
+            <ul style="padding-left: 18px;">
+              <li>Login y Register nativos.</li>
+              <li>Accesibilidad (Idioma, Modo O/C).</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </section>
 
